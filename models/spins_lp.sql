@@ -96,8 +96,8 @@ select *
 	, cast(incremental_sales as float)				/nullif(cast(base_dollars_promo			as float),0) lift
 	, cast(incremental_sales_yago as float)			/nullif(cast(base_dollars_promo_yago	as float)	,0) lift_yago
 	, cast(incremental_sales_2_yago as float)		/nullif(cast(base_dollars_promo_2_yago	as float),0) lift_2_yago
-	, case when  sales_2_yago =0 then 100 else  (cast(sales as float)/cast(sales_2_yago	as float) -1)  end as sales_per_change_2_yago
-	, case when  sales_yago =0 then 100 else (cast(sales as float)/cast(sales_yago			as float) -1) end as sales_per_change_yago
+	, case when  sales_2_yago =0 then 100 else  (cast(sales as float)/cast(sales_2_yago	    as float) -1)  end as sales_per_change_2_yago
+	, case when  sales_yago   =0 then 100 else  (cast(sales as float)/cast(sales_yago		as float) -1) end as sales_per_change_yago
 	, cast(sales as float) - 								cast(sales_2_yago				as float) sales_change_2_yago
 	, cast(sales as float) -								cast(sales_yago					as float) sales_change_yago
 	, cast(sales_display_only as float)				/nullif(cast(sales_display_only_2_yago	as float),0) -1 sales_display_only_per_change_2_yago
@@ -267,7 +267,7 @@ select *
 	, (unit_sales_promo/nullif(weeks_selling,0)/nullif(stores_selling,0)/nullif(avg_no_items,0))
 		/nullif(unit_sales_promo_2_yago/nullif(weeks_selling_2_yago,0)/nullif(stores_selling_2_yago,0)/nullif(avg_no_items_2_yago,0),0) -1 as unit_sales_promo_stores_weeks_avg_no_items_per_change_2_yago
 	, (unit_sales_promo/nullif(weeks_selling,0)/nullif(stores_selling,0)/nullif(avg_no_items,0))
-		/nullif(unit_sales_promo_yago/nullif(weeks_selling_yago,0)/nullif(stores_selling_yago,0)/nullif(avg_no_items_yago,0),0) -1 as unit_sales_promo_stores_weeks_avg_no_РЎС™ems_per_change_yago
+		/nullif(unit_sales_promo_yago/nullif(weeks_selling_yago,0)/nullif(stores_selling_yago,0)/nullif(avg_no_items_yago,0),0) -1 as unit_sales_promo_stores_weeks_avg_no_Р РЋРЎв„ўems_per_change_yago
 	, incremental_unit_sales/nullif(base_unit_sales_promo,0) as unit_lift
 	, incremental_unit_sales_2_yago/nullif(base_unit_sales_promo_2_yago,0) as unit_lift_2_yago
 	, incremental_unit_sales_yago/nullif(base_unit_sales_promo_yago,0) as unit_lift_yago
