@@ -96,8 +96,8 @@ select *
 	, cast(incremental_sales as float)				/nullif(cast(base_dollars_promo			as float),0) lift
 	, cast(incremental_sales_yago as float)			/nullif(cast(base_dollars_promo_yago	as float)	,0) lift_yago
 	, cast(incremental_sales_2_yago as float)		/nullif(cast(base_dollars_promo_2_yago	as float),0) lift_2_yago
-	, cast(sales as float)							/nullif(cast(sales_2_yago				as float),0) -1 sales_per_change_2_yago
-	, cast(sales as float)							/nullif(cast(sales_yago					as float),0) -1 sales_per_change_yago
+	, case when  sales_2_yago =0 then 100 else  (cast(sales as float)/cast(sales_2_yago	as float) -1)  end as sales_per_change_2_yago
+	, case when  sales_yago =0 then 100 else (cast(sales as float)/cast(sales_yago			as float) -1) end as sales_per_change_yago
 	, cast(sales as float) - 								cast(sales_2_yago				as float) sales_change_2_yago
 	, cast(sales as float) -								cast(sales_yago					as float) sales_change_yago
 	, cast(sales_display_only as float)				/nullif(cast(sales_display_only_2_yago	as float),0) -1 sales_display_only_per_change_2_yago
