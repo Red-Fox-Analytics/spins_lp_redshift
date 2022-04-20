@@ -1,0 +1,15 @@
+ version: 2
+
+sources:
+  - name: miltons_spin
+    schema: public
+    tables:
+      - name: miltons_spins_lp_2y
+
+models:
+  - name: spins_lp
+    description: "Spins lp"
+    columns:
+      - name: product_level
+        description: "Product Level"
+  
