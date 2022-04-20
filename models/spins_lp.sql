@@ -7,9 +7,9 @@ select product_level ,subcategory ,brand , product_universe , upc , time_period 
 			, sum(units) as unit_sales
 			, sum(units_2_yago) as unit_sales_2_yago
 			, sum(units_yago) as unit_sales_yago
-			, sum(cast(coalesce(dollars,0) as float)) as sales
-			, sum(cast(coalesce(dollars_2_yago,0) as float)) as sales_2_yago
-			, sum(cast(coalesce(dollars_yago,0) as float)) as sales_yago
+			, sum(cast(case when dollars is null then 0 else dollars end  as float)) as sales
+			, sum(cast(case when dollars_2_yago is null then 0  else dollars_2_yago end as float)) as sales_2_yago
+			, sum(cast(case when dollars_yago is null then 0 else dollars_yago end as float)) as sales_yago
 			, sum(case when dollars_display_only='' or dollars_display_only is null then 0 else cast(dollars_display_only as float) end) as sales_display_only
 			, sum(case when dollars_display_only_2_yago ='' or dollars_display_only_2_yago is null then 0 else cast(dollars_display_only_2_yago as float) end) as sales_display_only_2_yago
 			, sum(case when dollars_display_only_yago ='' or dollars_display_only_yago is null then 0 else cast(dollars_display_only_yago as float) end) as sales_display_only_yago
