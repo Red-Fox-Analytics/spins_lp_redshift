@@ -12,4 +12,51 @@ models:
     columns:
       - name: product_level
         description: "Product Level"
-  
+      - name: subcategory
+        description: "subcategory"
+      - name: brand
+        description: "brand"
+      - name: upc
+        description: "upc"
+      - name: time_period
+        description: "time period"
+      - name: time_period_end_date
+        description: "time period end date"
+      - name: geography
+        description: "geography"
+      - name: positioning_group
+        description: "positioning group"
+      - name: category
+        description: "category"
+        
+      - name: diet_keto_diet
+        description: "diet keto diet"
+      - name: diet_plant_based_diet
+        description: "diet plant based diet"
+      - name: flavor
+        description: "flavor"
+      - name: ingredient_oat
+        description: "ingredient oat"
+      - name: ingredient_soy_allergen
+        description: "ingredient soy allergen"
+      - name: ingredient_wheat_allergen
+        description: "ingredient wheat allergen"
+      - name: labeled_allergen_friendly
+        description: "labeled allergen friendly"
+      - name: labeled_grain_free
+        description: "labeled grain free"
+        
+      - name: labeled_gluten_free
+        description: "labeled gluten free"
+      - name: labeled_non_gmo
+        description: "labeled non gmo"
+      - name: labeled_organic
+        description: "labeled organic"
+      - name: pack_count
+        description: "pack count"
+      - name: paleo
+        description: "paleo"
+      - name: size
+        description: "size"
+      - name: "unit sales"
+        description: "unit sales"
