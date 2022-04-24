@@ -1,6 +1,6 @@
  with basic_calculations as (
 
-select product_level ,subcategory ,brand , product_universe , upc , time_period ,time_period_end_date, geography , positioning_group , category , company
+select product_level ,subcategory ,brand , product_universe , upc , description, time_period ,time_period_end_date, geography , positioning_group , category , company
 			, product_type , diet_keto_diet , diet_plant_based_diet , flavor , ingredient_oat , ingredient_soy_allergen 
 			, ingredient_wheat_allergen , labeled_allergen_friendly , labeled_grain_free , labeled_gluten_free , labeled_non_gmo 
 			, labeled_organic , pack_count , paleo , "size" 
@@ -60,7 +60,7 @@ select product_level ,subcategory ,brand , product_universe , upc , time_period 
 			, max(number_of_weeks_selling_yago) as "number of weeks selling ya"
 			, avg((case when "size"='' or "size" is null then null else cast("size" as float) end) ) as avg_size
 	from {{ source('miltons_spin', 'miltons_spins_lp_2y') }} msly--public.miltons_spins_lp_2y msly 
-	group by product_level ,subcategory ,brand , product_universe , upc , time_period, time_period_end_date, geography , positioning_group , category , company
+	group by product_level ,subcategory ,brand , product_universe , upc ,description, time_period, time_period_end_date, geography , positioning_group , category , company
 			, product_type , diet_keto_diet , diet_plant_based_diet , flavor , ingredient_oat , ingredient_soy_allergen 
 			, ingredient_wheat_allergen , labeled_allergen_friendly , labeled_grain_free , labeled_gluten_free , labeled_non_gmo 
 			, labeled_organic , pack_count , paleo , "size"
