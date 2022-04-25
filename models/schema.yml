@@ -18,6 +18,8 @@ models:
         description: "brand"
       - name: upc
         description: "upc"
+      - name: description
+        description: "description"
       - name: time_period
         description: "time period"
       - name: time_period_end_date
