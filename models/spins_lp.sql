@@ -10,9 +10,9 @@ select product_level ,subcategory ,brand , product_universe , upc , description,
 			, sum(cast(case when dollars is null then 0 else dollars end  as float)) as "$ sales"
 			, sum(cast(case when dollars_2_yago is null then 0  else dollars_2_yago end as float)) as "$ sales 2ya"
 			, sum(cast(case when dollars_yago is null then 0 else dollars_yago end as float)) as "$ sales ya"
-			, sum(case when dollars_display_only='' or dollars_display_only is null then 0 else cast(dollars_display_only as float) end) as sales_display_only
-			, sum(case when dollars_display_only_2_yago ='' or dollars_display_only_2_yago is null then 0 else cast(dollars_display_only_2_yago as float) end) as sales_display_only_2ya
-			, sum(case when dollars_display_only_yago ='' or dollars_display_only_yago is null then 0 else cast(dollars_display_only_yago as float) end) as sales_display_only_ya
+			, sum(case when dollars_display_only='' or dollars_display_only is null then 0 else cast(dollars_display_only as float) end) as "$ sales display only"
+			, sum(case when dollars_display_only_2_yago ='' or dollars_display_only_2_yago is null then 0 else cast(dollars_display_only_2_yago as float) end) as "sales display only 2ya"
+			, sum(case when dollars_display_only_yago ='' or dollars_display_only_yago is null then 0 else cast(dollars_display_only_yago as float) end) as "$ sales display only ya"
 			, sum(case when dollars_feature_and_display='' or dollars_feature_and_display is null then 0 else cast(dollars_feature_and_display as float) end) as "$ sales feat and disp"
 			, sum(case when dollars_feature_and_display_2_yago='' or dollars_feature_and_display_2_yago is null then 0 else cast(dollars_feature_and_display_2_yago as float) end) as "$ sales feat and_disp 2ya"
 			, sum(case when dollars_feature_and_display_yago='' or dollars_feature_and_display_yago is null then 0 else cast(dollars_feature_and_display_yago as float) end) as "$ sales feat and disp ya"
